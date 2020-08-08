@@ -2,11 +2,8 @@ import javax.swing.*;
 import java.awt.*;
 
 public class ConverterFrame extends JFrame {
-    private final GridBagConstraints constraints;
 
     public ConverterFrame() {
-        constraints = new GridBagConstraints();
-
         init();
     }
 
@@ -14,13 +11,13 @@ public class ConverterFrame extends JFrame {
         setTitle("Base Converter");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
-        setLayout(new GridBagLayout());
+        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
 
         setVisible(true);
     }
 
     public static void main(String[] args) {
-
+        new ConverterFrame();
     }
 }
