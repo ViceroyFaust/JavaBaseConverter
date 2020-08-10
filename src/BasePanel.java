@@ -2,7 +2,6 @@ import javax.swing.*;
 import java.awt.*;
 
 public class BasePanel extends JPanel {
-    private final int spaces = 20;
     private final JLabel baseLabel;
     private final JTextField input;
 
@@ -14,8 +13,9 @@ public class BasePanel extends JPanel {
     }
 
     private void init() {
-        setLayout(new FlowLayout(FlowLayout.CENTER, spaces - baseLabel.getText().length(), 5));
         setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        setLayout(new FlowLayout(FlowLayout.TRAILING));
+        setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
         add(baseLabel);
         add(input);
     }

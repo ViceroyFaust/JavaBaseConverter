@@ -21,7 +21,7 @@ public class ConverterFrame extends JFrame {
         setTitle("Base Converter");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
-        setLayout(new BoxLayout(this.getContentPane(), BoxLayout.Y_AXIS));
+        setLayout(new BoxLayout(this.getContentPane(), BoxLayout.PAGE_AXIS));
 
         add(decimalPanel);
         add(hexPanel);
