@@ -4,10 +4,12 @@ import java.awt.*;
 public class BasePanel extends JPanel {
     private final JLabel baseLabel;
     private final JTextField input;
+    private final int base;
 
-    public BasePanel(String label) {
+    public BasePanel(String label, int base) {
         baseLabel = new JLabel(label + ":");
         input = new JTextField(10);
+        this.base = base;
 
         init();
     }
@@ -20,8 +22,16 @@ public class BasePanel extends JPanel {
         add(input);
     }
 
-    public String getName() {
-        String output = baseLabel.getText();
-        return output.substring(0, output.length() - 1);
+    public String getText() {
+        return input.getText();
     }
+
+    public void setText(String text) {
+        input.setText(text);
+    }
+
+    public int getBase() {
+        return base;
+    }
+
 }
