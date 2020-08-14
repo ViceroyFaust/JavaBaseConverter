@@ -4,8 +4,9 @@ public class ConverterFrame extends JFrame {
     private final BasePanel[] panels;
 
     public ConverterFrame() {
-        panels = new BasePanel[]{new BasePanel("Decimal"), new BasePanel("Hexadecimal"),
-                new BasePanel("Duodecimal"), new BasePanel("Octal"), new BasePanel("Binary")};
+        panels = new BasePanel[]{new BasePanel("Decimal", 10), new BasePanel("Hexadecimal", 16),
+                new BasePanel("Duodecimal", 12), new BasePanel("Octal", 8),
+                new BasePanel("Binary", 2)};
 
         init();
     }
