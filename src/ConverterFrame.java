@@ -1,20 +1,17 @@
 import javax.swing.*;
 
 public class ConverterFrame extends JFrame {
-    private final BasePanel decimalPanel;
-    private final BasePanel hexPanel;
-    private final BasePanel duoPanel;
-    private final BasePanel octalPanel;
-    private final BasePanel binaryPanel;
+    private final BasePanel[] panels;
 
     public ConverterFrame() {
-        decimalPanel = new BasePanel("Decimal");
-        hexPanel = new BasePanel("Hexadecimal");
-        duoPanel = new BasePanel("Duodecimal");
-        octalPanel = new BasePanel("Octal");
-        binaryPanel = new BasePanel("Binary");
+        panels = new BasePanel[]{new BasePanel("Decimal"), new BasePanel("Hexadecimal"),
+                new BasePanel("Duodecimal"), new BasePanel("Octal"), new BasePanel("Binary")};
 
         init();
+    }
+
+    public static void main(String[] args) {
+        new ConverterFrame();
     }
 
     private void init() {
@@ -23,17 +20,11 @@ public class ConverterFrame extends JFrame {
         setLocationRelativeTo(null);
         setLayout(new BoxLayout(this.getContentPane(), BoxLayout.PAGE_AXIS));
 
-        add(decimalPanel);
-        add(hexPanel);
-        add(duoPanel);
-        add(octalPanel);
-        add(binaryPanel);
+        for (BasePanel bp : panels) {
+            add(bp);
+        }
 
         pack();
         setVisible(true);
-    }
-
-    public static void main(String[] args) {
-        new ConverterFrame();
     }
 }
