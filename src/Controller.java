@@ -23,17 +23,23 @@ public class Controller implements ActionListener {
         }
     }
 
-    public int convert() {
-        String input = new String();
+    public void convert() {
+        String input;
         int base = 0;
-        for (BasePanel b : bases) {
+        int num = 0;
+        for (BasePanel b : bases) { // Determine what base to convert from
             input = b.getText();
             base = b.getBase();
             if (!input.equals("")) {
+                num = Bases.toDecimal(input, base);
                 break;
             }
         }
-        return 0;
+        for (BasePanel b : bases) {
+            if (b.getBase() != base) {
+                b.setText(Bases.toBase(num, b.getBase()));
+            }
+        }
     }
 
     public void clear() {
